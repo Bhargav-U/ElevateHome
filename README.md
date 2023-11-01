@@ -124,12 +124,10 @@ cd /path/to/the/folder/directory/where/you/have/your/php/file/for/the/server
 php -S 0.0.0.0:8000
 ```
 
-<h6>
-  GRAFANA:
-<h6>
 <P>
-  Refer too grafana website to see how to install and configure it on your system
+  Now after you setup you server and it is running properly,open the test_code file and run the main.py to test and understand the format in which data is being sent processes,how server is responding etc.Doing this will help you understand the esp code easily.Note that the code dosent include error handling so if you try to connect to server when it is offline you will face errors.
 </P>
+
 
 MYSQL:
 
@@ -256,6 +254,13 @@ VALUES
   (5, 4, 'Device 4');
 
 ```
+
+<h6>
+  GRAFANA:
+<h6>
+<P>
+  Refer too grafana website to see how to install and configure it on your system
+</P>
 
 ***
 
@@ -823,11 +828,188 @@ void loop() {
   These are the setup and the loop functions.we initate serial communication,begin sensor readings,initate the switches and relays,manage the wifi handling.After we are done handiling the wifi there is a small logic that manages the initiation of the relays.If we are online then we simply set the relay states to that in the server,if not we simply set it to the local switch state,thus maintaining the integrity.After we do that we just create two taks that handle the tasks that was mentioned above.These tasks are running on two diffrent cores so they are running indepent to each other and one failing dosent affect other one and what ever might be the case there is stability of the system.
 </p>
 
----
+***
+
+<!---php code explanation--->
+<h2>
+  EXPLANATION FOR THE SERVER PHP CODE:
+</h2>
+
+```php
+
+// Database credentials
+$host = "server address";
+$username = "username";
+$password = "password";
+$database = "Home_data";
+
+```
+<p>
+  These are variables for server credentials
+</p>
+
+```php
+// Function to establish a database connection
+function connectToDatabase($host, $username, $password, $database)
+{
+    $conn = new mysqli($host, $username, $password, $database);
+    if ($conn->connect_error) {
+        die("Database connection failed: " . $conn->connect_error);
+    }
+    return $conn;
+}
+
+```
+<p>
+  This function will handle the connection to the database server
+</p>
+
+```php
+
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
+    // If it's a GET request, respond with "Server alive!"
+    echo "Server alive!";
+} 
+
+```
+<p>
+  If server receives any get request it responds by saying it is alive
+</p>
+
+
+```php
+elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Get the raw HTTP request data
+    $request_data = file_get_contents("php://input");
+
+    // Decode the JSON request data
+    $json_data = json_decode($request_data, true);
+
+    if ($json_data !== null) {
+        // Establish the database connection
+        $conn = connectToDatabase($host, $username, $password, $database);
+	        if (isset($json_data["Mac"])) {
+            // Check if the "Mac" key exists in the JSON data
+            $mac = $json_data["Mac"];
+
+            // Check if the provided Mac exists in the database
+            $check_sql = "SELECT Room_id FROM Room_data WHERE Mac = ?";
+            $check_stmt = $conn->prepare($check_sql);
+            $check_stmt->bind_param("s", $mac);
+            $check_stmt->execute();
+            $check_stmt->bind_result($room_id);
+            $check_stmt->fetch();
+            $check_stmt->close();
+
+            if ($room_id) {
+                // If the Mac exists, return the corresponding Room_id
+                $response = ["Room_id" => $room_id];
+                echo json_encode($response);
+            } else {
+                // If the Mac doesn't exist, insert a new entry and return the Room_id
+                $insert_sql = "INSERT INTO Room_data (Mac) VALUES (?)";
+                $insert_stmt = $conn->prepare($insert_sql);
+                $insert_stmt->bind_param("s", $mac);
+                $insert_stmt->execute();
+                $new_room_id = $insert_stmt->insert_id;
+                $insert_stmt->close();
+
+                $response = ["Room_id" => $new_room_id];
+                echo json_encode($response);
+            }
+
+            // Close the database connection
+            $conn->close();
+        } 
+
+```
+<p>
+  Now incase if the request is a post request then teh server will first verify if it is a mac handshake,mac handshake is basically the esp sending its mac.Mac address is used to identify the existing esps and teh new esp.So when a new mac address is identified a new entry for that address is created and the number of that address is returned.If the address already exists then server simply retuns the number for the existing mac address,here each esp is identified as a room and each esp can control 4 applinances.the name of the esp is given from thr room in which it is being used 
+</p>
+
+
+```php
+```
+<p>
+  
+</p>
+
+
+
+```php
+```
+<p>
+  
+</p>
+
+
+```php
+```
+<p>
+  
+</p>
+
+
+```php
+```
+<p>
+  
+</p>
+
+
+```php
+```
+<p>
+  
+</p>
+
+
+```php
+```
+<p>
+  
+</p>
+
+
+```php
+```
+<p>
+  
+</p>
+
+
+```php
+```
+<p>
+  
+</p>
+
+
+```php
+```
+<p>
+  
+</p>
+
+
+```php
+```
+<p>
+  
+</p>
+
+
+```php
+```
+<p>
+  
+</p>
 
 
 
 
 
-****
+
+***
 <a href='unnambhargav@gmail.com' target="_blank"><img alt='gmail' src='https://img.shields.io/badge/Feel_free to ask me your question and suggest improvemts-100000?style=for-the-badge&logo=gmail&logoColor=FF0000&labelColor=black&color=000000'/></a>
+***
