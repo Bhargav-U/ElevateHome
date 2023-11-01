@@ -35,7 +35,7 @@ void setup() {
   EEPROM.commit();
 
   // Define and save the JSON data
-  String jsonData = "{\"Ssid\":\"SSN\",\"Password\":\"Ssn1!Som2@Sase3#\"}";
+  String jsonData = "{\"Ssid\":\"ssid_of_your_wifi\",\"Password\":\"password_of_your_wifi\"}";
   writeStringToEEPROM(eepromStartAddress, jsonData);
 
   // Read the JSON data from EEPROM
