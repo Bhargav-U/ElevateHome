@@ -37,12 +37,37 @@
 
 <!---server setup section--->
 <h2>SETTING UP YOUR SERVER:</h3>
-<p>
-    If you are using a linux debian based operating system like ubuntu then simply paste the following commands on your terminal and run them.
-</p>
+If you are using a linux debian based operating system like ubuntu then simply paste the following commands on your terminal and run them<br>
+<a href='https://www.apachefriends.org/' target="_blank"><img alt='xampp' src='https://img.shields.io/badge/Use_ xampp  for-100000?style=for-the-badge&logo=xampp&logoColor=FD4704&labelColor=black&color=black'/></a><a href='https://www.microsoft.com/en-us/windows' target="_blank"><img alt='windows' src='https://img.shields.io/badge/windows_os-100000?style=for-the-badge&logo=windows&logoColor=02B4FF&labelColor=black&color=black'/></a>
 <h4>
   WEBSERVER SETUP:
+  <br>
+<a href='https://www.debian.org/' target="_blank"><img alt='debian' src='https://img.shields.io/badge/setup_for debian based operating systems-100000?style=for-the-badge&logo=debian&logoColor=FF0000&labelColor=black&color=black'/></a>
+  <br>
+PROJECT MADE ON <a href='https://ubuntu.com/' target="_blank"><img alt='ubuntu' src='https://img.shields.io/badge/Ubuntu-100000?style=for-the-badge&logo=ubuntu&logoColor=F75A00&labelColor=black&color=black'/></a>
+<br>
+
 </h4>
+
+<h6>
+  CREATE A DIRECTORY(OPTIONAL)
+</h6>
+
+```bash
+#open a location you can easily acess on your file structure
+cd /path to your loaction
+#create a project directory at that location
+mkdir project
+#open the folder
+cd project
+#create a server directory
+mkdir server
+#open server folder
+cd server
+#create a php file for the server
+gedit index.php
+#paste the server php code form the project repo in this file and save the file
+```
 
 <h6>
   PORT NUMBERS AND FIREWALL FOR REFERNCE:
@@ -87,6 +112,19 @@ sudo apt install php
 #check if  installation is sucessfull
 php -v
 ```
+
+<h6>
+  Running the php server:
+</h6>
+
+```bash
+#once you have fimished setting up the server ,to run teh php file use the following command,
+cd /path/to/the/folder/directory/where/you/have/your/php/file/for/the/server
+#it is a good practice to create a seperate folder for your server as mentioned above
+#run this to start the server,you will see all the incomming http requests on the terminal now
+php -S 0.0.0.0:8000
+```
+
 
 <h6>
   GRAFANA:
