@@ -1,42 +1,49 @@
-<h1>THis is in progress updates will be made shortly</h1>
+
 
 <!---Heading--->
-
 <h1 align="center">ElevateHome</h1>
 <p align="center">
   A simple home automation project using esp32
 </p>
 
-<!---Page image--->
-
-<p align="center">
- <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/KZ/JC/AR/138951723/work-from-home-solution-500x500.jpg" alt="pretty image maybe">
-</p>
 
 
 <!---Skill set i used for the project--->
-
+<h2>
+  Made by,
+</h2>
 <p align="center">
-  <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white" alt="shields">
-  <img src="https://img.shields.io/badge/espressif-E7352C?style=for-the-badge&logo=espressif&logoColor=white" alt="shields">
-  <img src="https://img.shields.io/badge/adafruit-000000?style=for-the-badge&amp;logo=adafruit&amp;logoColor=white" alt="shields">
-  <br>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="shields">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="shields">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="shields">
-  <img src="https://img.shields.io/badge/Arduino_IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="shields">
-  <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white" alt="shields">
-  <br>
-  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="shields">
-  <img src="https://img.shields.io/badge/PyCharm-000000.svg?&style=for-the-badge&logo=PyCharm&logoColor=wh" alt="shields">
-  <img src="https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white" alt="shields">
-  <img src="https://img.shields.io/badge/Grafana-orange?style=for-the-badge" alt="shields">
-</p>
+<a href='https://www.espressif.com/' target="_blank"><img alt='espressif' src='https://img.shields.io/badge/Esp32-100000?style=for-the-badge&logo=espressif&logoColor=FD0000&labelColor=FFFFFF&color=black'/></a>
+<br>
+<a href='https://www.arduino.cc/' target="_blank"><img alt='Arduino' src='https://img.shields.io/badge/Arduino_ide-100000?style=for-the-badge&logo=Arduino&logoColor=008CFF&labelColor=FFFFFF&color=000000'/></a>
+<a href='https://www.adafruit.com/' target="_blank"><img alt='Adafruit' src='https://img.shields.io/badge/Adafruit-100000?style=for-the-badge&logo=Adafruit&logoColor=000000&labelColor=FFFFFF&color=000000'/></a>
+<br>
+<a href='https://www.php.net/' target="_blank"><img alt='PHP' src='https://img.shields.io/badge/PHP-100000?style=for-the-badge&logo=PHP&logoColor=7D02FF&labelColor=FFFFFF&color=000000'/></a>
+<a href='https://grafana.com/' target="_blank"><img alt='grafana' src='https://img.shields.io/badge/grafana-100000?style=for-the-badge&logo=grafana&logoColor=FD9800&labelColor=FFFFFF&color=000000'/></a>
+<a href='https://grafana.com/' target="_blank"><img alt='mysql' src='https://img.shields.io/badge/Mysql-100000?style=for-the-badge&logo=mysql&logoColor=001EFF&labelColor=FFFFFF&color=000000'/></a>
+<a href='' target="_blank"><img alt='HTML' src='https://img.shields.io/badge/HTML-100000?style=for-the-badge&logo=HTML&logoColor=FFFF00&labelColor=FFFFFF&color=000000'/></a>
+<a href='' target="_blank"><img alt='css' src='https://img.shields.io/badge/CSS-100000?style=for-the-badge&logo=css&logoColor=FFFF00&labelColor=FFFFFF&color=000000'/></a>
+<br>
+<a href='' target="_blank"><img alt='javascript' src='https://img.shields.io/badge/Javascript-100000?style=for-the-badge&logo=javascript&logoColor=FFFF00&labelColor=FFFFFF&color=000000'/></a>
+<a href='' target="_blank"><img alt='Node.js' src='https://img.shields.io/badge/Nodejs-100000?style=for-the-badge&logo=Node.js&logoColor=25FF08&labelColor=FFFFFF&color=000000'/></a>
+<a href='' target="_blank"><img alt='React' src='https://img.shields.io/badge/React-100000?style=for-the-badge&logo=React&logoColor=03D1ED&labelColor=FFFFFF&color=000000'/></a>
+<a href='https://easyeda.com/' target="_blank"><img alt='easyeda' src='https://img.shields.io/badge/easyeda-100000?style=for-the-badge&logo=easyeda&logoColor=03D1ED&labelColor=FFFFFF&color=000000'/></a>
+<a href='https://www.freecad.org/' target="_blank"><img alt='freecad' src='https://img.shields.io/badge/freecad-100000?style=for-the-badge&logo=freecad&logoColor=03D1ED&labelColor=FFFFFF&color=000000'/>
+</a>
+<a href='https://www.python.org/' target="_blank"><img alt='python' src='https://img.shields.io/badge/Python-100000?style=for-the-badge&logo=python&logoColor=FDED06&labelColor=FFFFFF&color=000000'/></a>
+<a href='https://httpd.apache.org/' target="_blank"><img alt='apache' src='https://img.shields.io/badge/Apache-100000?style=for-the-badge&logo=apache&logoColor=FF0000&labelColor=FFFFFF&color=000000'/></a>
+
+***
+
+<!---server setup section--->
+<h2>SETTING UP YOUR SERVER:</h3>
 
 
-<!---Code section--->
-<h2>Code</h2>
-<h3>SAVING YOUR WIFI CREDENTALS TO YOUR EEPROM:</h3>
+
+***
+
+<!---explanation section--->
+<h2>SAVING YOUR WIFI CREDENTIALS TO YOUR EEPROM:</h3>
 
 ```c++
   String jsonData = "{\"Ssid\":\"Put_your_ssid_here\",\"Password\":\"Put_your_password_here\"}";
@@ -46,7 +53,7 @@
     Find this line in the save_wifi_factory.ino code and modify the ssid and passowrd.After you do that upload the code and hit reset now you should see that your ssid and passowrd are written into eeprom.If you are using a local server then make sure you put the wifi credentials of the local network.If you are usinga remote server you can put any random values here.Make sure to note down what ever credentials you put here.Once the uploading of the code is done ,if you are your local environemnt you can proceed to uplad the main code and start your work.If you are using a remote server then make sure that what ever ssid and passowrd you saved into the esp are vaild,if not disconnect power to the esp,open your dashboard,make sure dashboard is connected to your server,go to the settings page,in the wifi settings add your wifi ssid and password and save them.once that is done now open you mobile hotspot aand change the name and password to match teh ssid and password in the eeprom,now turn you mobile hotspot and power on your esp.Now after few seconds you esp will connect to the mobile hotspot ,then to the server and fetch the saved credentials and automatically update the inbuilt ssid and password and will connect to the specified wifi network.
 </p>
 
-<h3>ESP32 CODE EXPLAINED:</h3>
+<h2>ESP32 CODE EXPLAINED:</h3>
 
 ```c++
 #include <WiFi.h>
@@ -576,6 +583,7 @@ void loop() {
 </p>
 
 
+****
 
 
 <h3>MY SQL SETUP:</h3>
