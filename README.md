@@ -10,7 +10,7 @@
 
 <!---Skill set i used for the project--->
 <h2>
-  Made by,
+  Made using,
 </h2>
 <p align="center">
 <a href='https://www.espressif.com/' target="_blank"><img alt='espressif' src='https://img.shields.io/badge/Esp32-100000?style=for-the-badge&logo=espressif&logoColor=FD0000&labelColor=FFFFFF&color=black'/></a>
@@ -37,6 +37,189 @@
 
 <!---server setup section--->
 <h2>SETTING UP YOUR SERVER:</h3>
+<p>
+    If you are using a linux debian based operating system like ubuntu then simply paste the following commands on your terminal and run them.
+</p>
+<h4>
+  WEBSERVER SETUP:
+</h4>
+
+<h6>
+  PORT NUMBERS AND FIREWALL FOR REFERNCE:
+</h6>
+
+```bash
+#sudo lsof -i :port number --> gives the port user
+#mysql:3306
+#php:8000(not fixed but i use this)
+#grafana:3000
+#To see if firewall is running
+sudo ufw status
+#Allow port that you are using for php webserver in my case i am using 8000
+sudo ufw allow 8000
+```
+<h6>
+  APACHE:
+</h6>
+
+```bash
+#update your system
+sudo apt update
+#install apcahe webserver
+sudo apt install apache2
+#start apache
+sudo service apache2 start
+#enable apache to start at boot
+sudo systemctl enable apache2
+#check if it is up and running
+sudo systemctl status apache2
+```
+
+<h6>
+  PHP:
+</h6>
+
+```bash
+#update the system
+sudo apt update
+#install php
+sudo apt install php
+#check if  installation is sucessfull
+php -v
+```
+
+<h6>
+  GRAFANA:
+<h6>
+<P>
+  Refer too grafana website to see how to install and configure it on your system
+</P>
+
+  MYSQL:
+</h6>
+<P>
+  if you are using a remote database then no need to do the mysql setup,simply chnage the credentials in the php code so that server connects to your database
+</P>
+
+```bash
+#update the system
+sudo apt update
+#install mysql server and client
+sudo apt install mysql-server
+sudo apt install mysql-client
+#start mysql
+sudo systemctl start mysql
+#enable it at boot
+sudo systemctl enable mysql
+#check if it is up and running
+sudo systemctl status mysql
+#setup mysql installation
+sudo mysql_secure_installation
+#open mysql and check if setup is sucessfull
+sudo mysql -u root -p
+#install the php mysql extension ,if not installed
+sudo apt install php-mysql
+```
+
+<P>
+  Run the below queries on the your mysql
+</P>
+
+```sql
+
+
+CREATE DATABASE Home_data;
+USE Home_data;
+
+CREATE TABLE Current_home_state (
+  Room_id INT, Appliance_id TINYINT, 
+  State TINYINT
+);
+INSERT INTO Current_home_state (Room_id, Appliance_id, State) 
+VALUES 
+  (1, 1, 0), 
+  (1, 2, 0), 
+  (1, 3, 0), 
+  (1, 4, 0), 
+  (2, 1, 0), 
+  (2, 2, 0), 
+  (2, 3, 0), 
+  (2, 4, 0), 
+  (3, 1, 0), 
+  (3, 2, 0), 
+  (3, 3, 0), 
+  (3, 4, 0), 
+  (4, 1, 0), 
+  (4, 2, 0), 
+  (4, 3, 0), 
+  (4, 4, 0), 
+  (5, 1, 0), 
+  (5, 2, 0), 
+  (5, 3, 0), 
+  (5, 4, 0);
+CREATE TABLE Current_sensor_data (
+  Room_id INT, 
+  Sensor_id TINYINT, 
+  Sensor_name VARCHAR(255), 
+  Sensor_readings VARCHAR(255)
+);
+INSERT INTO Current_sensor_data (
+  Room_id, Sensor_id, Sensor_name, Sensor_readings
+) 
+VALUES 
+  (1, 1, 'DHT11', ''), 
+  (2, 1, 'DHT11', ''), 
+  (3, 1, 'DHT11', ''), 
+  (4, 1, 'DHT11', ''), 
+  (5, 1, 'DHT11', '');
+CREATE TABLE Wifi_data (
+  wifi_id INT, 
+  label VARCHAR(255), 
+  ssid VARCHAR(255), 
+  password VARCHAR(255)
+);
+INSERT INTO Wifi_data (wifi_id, label, ssid, password) 
+VALUES 
+  (
+    1, 'College', 'SSN', 'Ssn1!Som2@Sase3#'
+  );
+CREATE TABLE Room_data (
+  Room_id INT AUTO_INCREMENT PRIMARY KEY, 
+  Room_name VARCHAR(255) DEFAULT "New Room", 
+  Mac VARCHAR(255) NOT NULL UNIQUE
+);
+CREATE TABLE Appliance_data (
+  Room_id INT, 
+  Appliance_id INT, 
+  Appliance_name VARCHAR(255)
+);
+INSERT INTO Appliance_data (
+  Room_id, Appliance_id, Appliance_name
+) 
+VALUES 
+  (1, 1, 'Device 1'), 
+  (1, 2, 'Device 2'), 
+  (1, 3, 'Device 3'), 
+  (1, 4, 'Device 4'), 
+  (2, 1, 'Device 1'), 
+  (2, 2, 'Device 2'), 
+  (2, 3, 'Device 3'), 
+  (2, 4, 'Device 4'), 
+  (3, 1, 'Device 1'), 
+  (3, 2, 'Device 2'), 
+  (3, 3, 'Device 3'), 
+  (3, 4, 'Device 4'), 
+  (4, 1, 'Device 1'), 
+  (4, 2, 'Device 2'), 
+  (4, 3, 'Device 3'), 
+  (4, 4, 'Device 4'), 
+  (5, 1, 'Device 1'), 
+  (5, 2, 'Device 2'), 
+  (5, 3, 'Device 3'), 
+  (5, 4, 'Device 4');
+
+```
+
 
 
 
@@ -586,103 +769,5 @@ void loop() {
 ****
 
 
-<h3>MY SQL SETUP:</h3>
-
-
-```sql
-
-
-CREATE DATABASE Home_data;
-USE Home_data;
-
-CREATE TABLE Current_home_state (
-  Room_id INT, Appliance_id TINYINT, 
-  State TINYINT
-);
-INSERT INTO Current_home_state (Room_id, Appliance_id, State) 
-VALUES 
-  (1, 1, 0), 
-  (1, 2, 0), 
-  (1, 3, 0), 
-  (1, 4, 0), 
-  (2, 1, 0), 
-  (2, 2, 0), 
-  (2, 3, 0), 
-  (2, 4, 0), 
-  (3, 1, 0), 
-  (3, 2, 0), 
-  (3, 3, 0), 
-  (3, 4, 0), 
-  (4, 1, 0), 
-  (4, 2, 0), 
-  (4, 3, 0), 
-  (4, 4, 0), 
-  (5, 1, 0), 
-  (5, 2, 0), 
-  (5, 3, 0), 
-  (5, 4, 0);
-CREATE TABLE Current_sensor_data (
-  Room_id INT, 
-  Sensor_id TINYINT, 
-  Sensor_name VARCHAR(255), 
-  Sensor_readings VARCHAR(255)
-);
-INSERT INTO Current_sensor_data (
-  Room_id, Sensor_id, Sensor_name, Sensor_readings
-) 
-VALUES 
-  (1, 1, 'DHT11', ''), 
-  (2, 1, 'DHT11', ''), 
-  (3, 1, 'DHT11', ''), 
-  (4, 1, 'DHT11', ''), 
-  (5, 1, 'DHT11', '');
-CREATE TABLE Wifi_data (
-  wifi_id INT, 
-  label VARCHAR(255), 
-  ssid VARCHAR(255), 
-  password VARCHAR(255)
-);
-INSERT INTO Wifi_data (wifi_id, label, ssid, password) 
-VALUES 
-  (
-    1, 'College', 'SSN', 'Ssn1!Som2@Sase3#'
-  );
-CREATE TABLE Room_data (
-  Room_id INT AUTO_INCREMENT PRIMARY KEY, 
-  Room_name VARCHAR(255) DEFAULT "New Room", 
-  Mac VARCHAR(255) NOT NULL UNIQUE
-);
-CREATE TABLE Appliance_data (
-  Room_id INT, 
-  Appliance_id INT, 
-  Appliance_name VARCHAR(255)
-);
-INSERT INTO Appliance_data (
-  Room_id, Appliance_id, Appliance_name
-) 
-VALUES 
-  (1, 1, 'Device 1'), 
-  (1, 2, 'Device 2'), 
-  (1, 3, 'Device 3'), 
-  (1, 4, 'Device 4'), 
-  (2, 1, 'Device 1'), 
-  (2, 2, 'Device 2'), 
-  (2, 3, 'Device 3'), 
-  (2, 4, 'Device 4'), 
-  (3, 1, 'Device 1'), 
-  (3, 2, 'Device 2'), 
-  (3, 3, 'Device 3'), 
-  (3, 4, 'Device 4'), 
-  (4, 1, 'Device 1'), 
-  (4, 2, 'Device 2'), 
-  (4, 3, 'Device 3'), 
-  (4, 4, 'Device 4'), 
-  (5, 1, 'Device 1'), 
-  (5, 2, 'Device 2'), 
-  (5, 3, 'Device 3'), 
-  (5, 4, 'Device 4');
-
-
-```
 
 
