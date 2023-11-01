@@ -1,12 +1,10 @@
-
-
 <!---Heading--->
 <h1 align="center">ElevateHome</h1>
 <p align="center">
   A simple home automation project using esp32
 </p>
 
-
+***
 
 <!---Skill set i used for the project--->
 <h2>
@@ -33,7 +31,7 @@
 <a href='https://www.python.org/' target="_blank"><img alt='python' src='https://img.shields.io/badge/Python-100000?style=for-the-badge&logo=python&logoColor=FDED06&labelColor=FFFFFF&color=000000'/></a>
 <a href='https://httpd.apache.org/' target="_blank"><img alt='apache' src='https://img.shields.io/badge/Apache-100000?style=for-the-badge&logo=apache&logoColor=FF0000&labelColor=FFFFFF&color=000000'/></a>
 
-***
+---
 
 <!---server setup section--->
 <h2>SETTING UP YOUR SERVER:</h3>
@@ -83,6 +81,7 @@ sudo ufw status
 #Allow port that you are using for php webserver in my case i am using 8000
 sudo ufw allow 8000
 ```
+
 <h6>
   APACHE:
 </h6>
@@ -125,7 +124,6 @@ cd /path/to/the/folder/directory/where/you/have/your/php/file/for/the/server
 php -S 0.0.0.0:8000
 ```
 
-
 <h6>
   GRAFANA:
 <h6>
@@ -133,7 +131,8 @@ php -S 0.0.0.0:8000
   Refer too grafana website to see how to install and configure it on your system
 </P>
 
-  MYSQL:
+MYSQL:
+
 </h6>
 <P>
   if you are using a remote database then no need to do the mysql setup,simply chnage the credentials in the php code so that server connects to your database
@@ -170,94 +169,124 @@ CREATE DATABASE Home_data;
 USE Home_data;
 
 CREATE TABLE Current_home_state (
-  Room_id INT, Appliance_id TINYINT, 
+  Room_id INT, Appliance_id TINYINT,
   State TINYINT
 );
-INSERT INTO Current_home_state (Room_id, Appliance_id, State) 
-VALUES 
-  (1, 1, 0), 
-  (1, 2, 0), 
-  (1, 3, 0), 
-  (1, 4, 0), 
-  (2, 1, 0), 
-  (2, 2, 0), 
-  (2, 3, 0), 
-  (2, 4, 0), 
-  (3, 1, 0), 
-  (3, 2, 0), 
-  (3, 3, 0), 
-  (3, 4, 0), 
-  (4, 1, 0), 
-  (4, 2, 0), 
-  (4, 3, 0), 
-  (4, 4, 0), 
-  (5, 1, 0), 
-  (5, 2, 0), 
-  (5, 3, 0), 
+INSERT INTO Current_home_state (Room_id, Appliance_id, State)
+VALUES
+  (1, 1, 0),
+  (1, 2, 0),
+  (1, 3, 0),
+  (1, 4, 0),
+  (2, 1, 0),
+  (2, 2, 0),
+  (2, 3, 0),
+  (2, 4, 0),
+  (3, 1, 0),
+  (3, 2, 0),
+  (3, 3, 0),
+  (3, 4, 0),
+  (4, 1, 0),
+  (4, 2, 0),
+  (4, 3, 0),
+  (4, 4, 0),
+  (5, 1, 0),
+  (5, 2, 0),
+  (5, 3, 0),
   (5, 4, 0);
 CREATE TABLE Current_sensor_data (
-  Room_id INT, 
-  Sensor_id TINYINT, 
-  Sensor_name VARCHAR(255), 
+  Room_id INT,
+  Sensor_id TINYINT,
+  Sensor_name VARCHAR(255),
   Sensor_readings VARCHAR(255)
 );
 INSERT INTO Current_sensor_data (
   Room_id, Sensor_id, Sensor_name, Sensor_readings
-) 
-VALUES 
-  (1, 1, 'DHT11', ''), 
-  (2, 1, 'DHT11', ''), 
-  (3, 1, 'DHT11', ''), 
-  (4, 1, 'DHT11', ''), 
+)
+VALUES
+  (1, 1, 'DHT11', ''),
+  (2, 1, 'DHT11', ''),
+  (3, 1, 'DHT11', ''),
+  (4, 1, 'DHT11', ''),
   (5, 1, 'DHT11', '');
 CREATE TABLE Wifi_data (
-  wifi_id INT, 
-  label VARCHAR(255), 
-  ssid VARCHAR(255), 
+  wifi_id INT,
+  label VARCHAR(255),
+  ssid VARCHAR(255),
   password VARCHAR(255)
 );
-INSERT INTO Wifi_data (wifi_id, label, ssid, password) 
-VALUES 
+INSERT INTO Wifi_data (wifi_id, label, ssid, password)
+VALUES
   (
     1, 'College', 'SSN', 'Ssn1!Som2@Sase3#'
   );
 CREATE TABLE Room_data (
-  Room_id INT AUTO_INCREMENT PRIMARY KEY, 
-  Room_name VARCHAR(255) DEFAULT "New Room", 
+  Room_id INT AUTO_INCREMENT PRIMARY KEY,
+  Room_name VARCHAR(255) DEFAULT "New Room",
   Mac VARCHAR(255) NOT NULL UNIQUE
 );
 CREATE TABLE Appliance_data (
-  Room_id INT, 
-  Appliance_id INT, 
+  Room_id INT,
+  Appliance_id INT,
   Appliance_name VARCHAR(255)
 );
 INSERT INTO Appliance_data (
   Room_id, Appliance_id, Appliance_name
-) 
-VALUES 
-  (1, 1, 'Device 1'), 
-  (1, 2, 'Device 2'), 
-  (1, 3, 'Device 3'), 
-  (1, 4, 'Device 4'), 
-  (2, 1, 'Device 1'), 
-  (2, 2, 'Device 2'), 
-  (2, 3, 'Device 3'), 
-  (2, 4, 'Device 4'), 
-  (3, 1, 'Device 1'), 
-  (3, 2, 'Device 2'), 
-  (3, 3, 'Device 3'), 
-  (3, 4, 'Device 4'), 
-  (4, 1, 'Device 1'), 
-  (4, 2, 'Device 2'), 
-  (4, 3, 'Device 3'), 
-  (4, 4, 'Device 4'), 
-  (5, 1, 'Device 1'), 
-  (5, 2, 'Device 2'), 
-  (5, 3, 'Device 3'), 
+)
+VALUES
+  (1, 1, 'Device 1'),
+  (1, 2, 'Device 2'),
+  (1, 3, 'Device 3'),
+  (1, 4, 'Device 4'),
+  (2, 1, 'Device 1'),
+  (2, 2, 'Device 2'),
+  (2, 3, 'Device 3'),
+  (2, 4, 'Device 4'),
+  (3, 1, 'Device 1'),
+  (3, 2, 'Device 2'),
+  (3, 3, 'Device 3'),
+  (3, 4, 'Device 4'),
+  (4, 1, 'Device 1'),
+  (4, 2, 'Device 2'),
+  (4, 3, 'Device 3'),
+  (4, 4, 'Device 4'),
+  (5, 1, 'Device 1'),
+  (5, 2, 'Device 2'),
+  (5, 3, 'Device 3'),
   (5, 4, 'Device 4');
 
 ```
 
+***
+
+<!---esp setup section--->
+<h2>SETTING UP YOUR ESP:</h3>
+<p>
+-You can use a esp32 devlopment board,jumper wires,relay module(4 relays),switches,wires to handle ac current to make youself a circuit based on the generic circuit i have attached below<br>
+-You can use my gerber file named "Elevatehomegerber" to order your own pcb and make a custom designed project which doesnt have the tiring work of wiring etc,simply get the pcb,buy the components,solder them onto teh pcb and you are reday to go.<br>
+-You can also use the stl file to print a simple enclosure for the project by using the stl file named "Case".<br>
+-After you are done making your hardware setup follow the instructions below to program your esp.
+</p>
+
+
+
+***
+
+
+<!---instruction for uploading code on esp--->
+<h2>PROGRAMMING THE PROJECT:</h2
+The below instructions are for programming your project using arduino ide.<br>
+Note:Mkae sure that esp32 boards is insatlled on your ide<br>
+<p>
+-It dosent matter if you made your own circuit or used the custom pcb your project will have a boot and a reset pin<br>
+-To upload the code you need to make sure that you esp is in boot mode<br>
+-Power on your esp and connect it to your laptop either using a ftdi or a usb cable<br>
+-Go to the boards section and select esp32doitdevkit(depends on what you are using but in my case i used this)<br>
+-Select the port to which the esp is connected and on serial monitor set teh baud rate to 115200<br>
+-No look at the serial monitor,press and hold the boot button,now keep holding teh boot button and press the reset button you will see a messge saying "waiting for download",now relase the boot button and click on the uplaod button on the ide<br>
+-Once code is uploaded click the reset button<br>
+-In the below explanation section i have explained which code to upload and chanegs you need to do<br>
+</p>
 
 
 
@@ -271,7 +300,7 @@ VALUES
 ```
 
 <p>
-    Find this line in the save_wifi_factory.ino code and modify the ssid and passowrd.After you do that upload the code and hit reset now you should see that your ssid and passowrd are written into eeprom.If you are using a local server then make sure you put the wifi credentials of the local network.If you are usinga remote server you can put any random values here.Make sure to note down what ever credentials you put here.Once the uploading of the code is done ,if you are your local environemnt you can proceed to uplad the main code and start your work.If you are using a remote server then make sure that what ever ssid and passowrd you saved into the esp are vaild,if not disconnect power to the esp,open your dashboard,make sure dashboard is connected to your server,go to the settings page,in the wifi settings add your wifi ssid and password and save them.once that is done now open you mobile hotspot aand change the name and password to match teh ssid and password in the eeprom,now turn you mobile hotspot and power on your esp.Now after few seconds you esp will connect to the mobile hotspot ,then to the server and fetch the saved credentials and automatically update the inbuilt ssid and password and will connect to the specified wifi network.
+    Find this line in the save_wifi_factory.ino code and modify the ssid and passowrd.After you do that upload the code and hit reset now you should see that your ssid and passowrd are written into eeprom.If you are using a local server then make sure you put the wifi credentials of the local network.If you are using a remote server you can put any random values here.Make sure to note down what ever credentials you put here.Once the uploading of the code is done ,if you are your local environemnt you can proceed to uplad the main code and start your work.If you are using a remote server then make sure that what ever ssid and passowrd you saved into the esp are vaild,if not disconnect power to the esp,open your dashboard,make sure dashboard is connected to your server,go to the settings page,in the wifi settings add your wifi ssid and password and save them.once that is done now open you mobile hotspot aand change the name and password to match teh ssid and password in the eeprom,now turn you mobile hotspot and power on your esp.Now after few seconds you esp will connect to the mobile hotspot ,then to the server and fetch the saved credentials and automatically update the inbuilt ssid and password and will connect to the specified wifi network.
 </p>
 
 <h2>ESP32 CODE EXPLAINED:</h3>
@@ -287,7 +316,6 @@ VALUES
 <p>
     This includes all the required libraries
 </p>
-
 
 ```c++
   // Define the pin and sensor type for DHT sensor
@@ -340,7 +368,6 @@ String relayStates = "0000"; // Relay control states
   After we include the libraries we are going to create the requied variables and constants this includes declaring the sensor pins,switch pins,relay pins, based on your circuit modify the pin numbers.next we include arrays to store the state of the devices as string which helps us to compare the pasta nd current states in  a simple and straight forward way.As usual we created a global http object that can be acessed throught the code.some boolean variables to save the states.Th saved wifi credentials are intially empty but the data in teh eeprom is written into them ,so before uploading the automation code make sure to upload the wifi_factory_setting code and write your wifi credentials.If youa re working in a local environment it is a good practice to put the wifi credentials of the network the server is connected to to,else you can use any wifi credentials.
 </p>
 
-
 ```c++
 //RTOS TASKS
 TaskHandle_t task1Handle = NULL;
@@ -350,7 +377,6 @@ TaskHandle_t task2Handle = NULL;
 <p>
   Here we created two tasks,this is basically an rtos implemnetation.The idea of having two tasks is to increase the responsiveness of the code.When the server is offline there might be a little delay in the response,as the esp firsts checks for server avilabilty and then proceeds into modifing the relay states and managing the switch states.so adding a two tasks where one handles the local logic to reading switches and other handing the server will be very efficient.
 </p>
-
 
 ```c++
   // Function to write a string to EEPROM
@@ -393,7 +419,6 @@ void writeWiFiCredentialsToEEPROM(const String & json) {
   These function basically write and read the eeprom to get teh saved wifi credentials and to write the new credentials
 </p>
 
-
 ```c++
 // Function to connect to Wi-Fi
 bool connectToWiFi(const char * ssid,
@@ -416,7 +441,6 @@ bool connectToWiFi(const char * ssid,
 <p>
   This function is used to connect to the wifi,it saves unessary waiting time by only trying the connection for limited tries.
 </p>
-
 
 ```c++
   //Function to create a handshake between teh device and server
@@ -458,7 +482,6 @@ void sendMacHandshake() {
 <p>
   Once the connection is established the esp sends as mac adress handshake in which it sends its mac address to the server.The server will identify the esp based on the mac.If the esp is already saved server will return the assigned room number if not it will assign and new room number save the mac and return the new room number.This logic is responsible for the simple setup process of this project
 </p>
-
 
 ```c++
   // Function to check device status
@@ -518,7 +541,6 @@ void printStatus() {
 <p>
   This part of the code is used to check the status of the device and the server.Decice status referes to the esp being connected to wifi and the server status is server's availabilty.When the device is offline the esp attempts to reconnect to the wifi.The logic of the server check is very simple,the esp cheks the servers status and sets a flag in case the server is online,the next time when the server is back online esp checks for the flag ,if flag is enabled esp sends the current device state and then resets the flag.This is to ensure that any changes made manually on the esp when the server was offline are reflected properly on the server.
 </p>
-
 
 ```c++
   // Function to handle Wi-Fi
@@ -588,7 +610,6 @@ void handleWiFi() {
   This code handles the wifi connection.Initially esp gets the data from the eeprom uses those credentials to connect to teh wifi,if the connection is sucessfull it asks the server for the saved ssiss and passwords in the server,it checks the ssid and  password from the server ,if it was able to connect to wifi then the new credentials are replaced in the place of old credentials and the board is reseted.so from next time the board simply uses these new credentials.This lgic is what is responsible for the easy wifi connection setup in the dashboard
 </p>
 
-
 ```c++
   // Function to control relays
 void controlRelays(String state) {
@@ -602,7 +623,6 @@ void controlRelays(String state) {
 <p>
   This will update the relay pins to the recent relay states
 </p>
-
 
 ```c++
   // Function to get switch states
@@ -765,7 +785,7 @@ void setup() {
         dht.begin();
         for (int i = 0; i < numPins; i++) {
                 pinMode(switchpins[i], INPUT_PULLUP);
-                
+
         }
         for (int i = 0; i < numPins; i++) {
                 newState += String(digitalRead(switchpins[i]));
@@ -781,14 +801,14 @@ void setup() {
         checkServerStatus();
         if (!deviceOnline || !serverOnline) {
                 relayStates = currentState;
-                
+
          } else {
                   askForRelayStates();
                   controlRelays(relayStates);
                   getSwitchStates();
          }
 
-        
+
 
         xTaskCreatePinnedToCore(Manual, "Manual", 2048, NULL, 1, & task1Handle, 1);
         xTaskCreatePinnedToCore(Connected, "Connected", 2048, NULL, 1, & task2Handle, 0);
@@ -803,9 +823,4 @@ void loop() {
   These are the setup and the loop functions.we initate serial communication,begin sensor readings,initate the switches and relays,manage the wifi handling.After we are done handiling the wifi there is a small logic that manages the initiation of the relays.If we are online then we simply set the relay states to that in the server,if not we simply set it to the local switch state,thus maintaining the integrity.After we do that we just create two taks that handle the tasks that was mentioned above.These tasks are running on two diffrent cores so they are running indepent to each other and one failing dosent affect other one and what ever might be the case there is stability of the system.
 </p>
 
-
-****
-
-
-
-
+---
