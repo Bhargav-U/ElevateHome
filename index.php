@@ -1,14 +1,14 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header(
-    "Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept"
+    "Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept" //not recommeneded if you are deploying it as a product ,only for testing and prototyping
 );
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 
 // Database credentials
-$host = "127.0.0.1";
-$username = "root";
-$password = "Karthik@2004";
+$host = "127.0.0.1"; //I am using local host if you are using a remote server replace with its address
+$username = "put your name here";
+$password = "put your password here";
 $database = "Home_data";
 
 if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
@@ -29,8 +29,6 @@ function connectToDatabase($host, $username, $password, $database)
     return $conn;
 }
 
-
-
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
     // If it's a GET request, respond with "Server alive!"
     echo "Server alive!";
@@ -44,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     if ($json_data !== null) {
         // Establish the database connection
         $conn = connectToDatabase($host, $username, $password, $database);
-	        if (isset($json_data["Mac"])) {
+        if (isset($json_data["Mac"])) {
             // Check if the "Mac" key exists in the JSON data
             $mac = $json_data["Mac"];
 
@@ -76,8 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
             // Close the database connection
             $conn->close();
-        } 
-	elseif ($json_data !== null && isset($json_data["Case"])) {
+        } elseif ($json_data !== null && isset($json_data["Case"])) {
             // Establish the database connection
             $conn = connectToDatabase($host, $username, $password, $database);
 
