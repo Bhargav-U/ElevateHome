@@ -17,8 +17,8 @@
 #include <DHT.h>
 
 // Define the pin and sensor type for DHT sensor
-#define DHTPIN 27
-#define DHTTYPE DHT11
+#define DHTPIN use_your_sensor_gpio
+#define DHTTYPE use_your_dht_type(DHT11 ETC)
 DHT dht(DHTPIN, DHTTYPE);
 float temperature, humidity;
 
@@ -36,23 +36,24 @@ String savedPassword = "";
 
 // HTTP client for making server requests
 HTTPClient http;
-const char * serverAddress = "http://10.17.170.209:8000/";
+const char * serverAddress = "Your_server_url_goes_here";
 bool serverWasOffline = false;
 String Room_id = "";
 
 // Number of pins and their corresponding switch and relay pins
 const int numPins = 4;
+//Make sure that you replace the switch pins and the relay pins with teh gpio pins that you are using
 const int switchpins[numPins] = {
-        36,
-        39,
-        34,
-        35
+        1,
+        2,
+        3,
+        4
 };
 const int relaypins[numPins] = {
-        16,
-        17,
-        18,
-        19
+        1,
+        2,
+        3,
+        4
 };
 
 // State variables
