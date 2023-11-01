@@ -35,9 +35,17 @@
 
 
 <!---Code section--->
-
 <h2>Code</h2>
-<h3>ESP32 CODE Explained:</h3>
+<h3>SAVING YOUR WIFI CREDENTALS TO YOUR EEPROM:</h3>
+```c++
+  String jsonData = "{\"Ssid\":\"Put_your_ssid_here\",\"Password\":\"Put_your_password_here\"}";
+```
+
+<p>
+    Find this line in the save_wifi_factory.ino code and modify the ssid and passowrd.After you do that upload the code and hit reset now you should see that your ssid and passowrd are written into eeprom.If you are using a local server then make sure you put the wifi credentials of the local network.If you are usinga remote server you can put any random values here.Make sure to note down what ever credentials you put here.Once the uploading of the code is done ,if you are your local environemnt you can proceed to uplad the main code and start your work.If you are using a remote server then make sure that what ever ssid and passowrd you saved into the esp are vaild,if not disconnect power to the esp,open your dashboard,make sure dashboard is connected to your server,go to the settings page,in the wifi settings add your wifi ssid and password and save them.once that is done now open you mobile hotspot aand change the name and password to match teh ssid and password in the eeprom,now turn you mobile hotspot and power on your esp.Now after few seconds you esp will connect to the mobile hotspot ,then to the server and fetch the saved credentials and automatically update the inbuilt ssid and password and will connect to the specified wifi network.
+</p>
+
+<h3>ESP32 CODE EXPLAINED:</h3>
 
 ```c++
 #include <WiFi.h>
