@@ -922,89 +922,31 @@ elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 ```
 <p>
-  Now incase if the request is a post request then teh server will first verify if it is a mac handshake,mac handshake is basically the esp sending its mac.Mac address is used to identify the existing esps and teh new esp.So when a new mac address is identified a new entry for that address is created and the number of that address is returned.If the address already exists then server simply retuns the number for the existing mac address,here each esp is identified as a room and each esp can control 4 applinances.the name of the esp is given from thr room in which it is being used 
+  Now incase if the request is a post request then teh server will first verify if it is a mac handshake,mac handshake is basically the esp sending its mac.Mac address is used to identify the existing esps and teh new esp.So when a new mac address is identified a new entry for that address is created and the number of that address is returned.If the address already exists then server simply retuns the number for the existing mac address,here each esp is identified as a room and each esp can control 4 applinances.the name of the esp is given from the room in which it is being used 
 </p>
 
 
 ```php
+	elseif ($json_data !== null && isset($json_data["Case"])) {
+            // Establish the database connection
+            $conn = connectToDatabase($host, $username, $password, $database);
+
+            switch ($json_data["Case"]) {
+
+.
+.
+.
+.
+.
+
+		}
+}
+
+
 ```
 <p>
-  
+  This will handle all other conditions,there is a variable called case.so THe case variable will tell the server about the information that is being sent  
 </p>
-
-
-
-```php
-```
-<p>
-  
-</p>
-
-
-```php
-```
-<p>
-  
-</p>
-
-
-```php
-```
-<p>
-  
-</p>
-
-
-```php
-```
-<p>
-  
-</p>
-
-
-```php
-```
-<p>
-  
-</p>
-
-
-```php
-```
-<p>
-  
-</p>
-
-
-```php
-```
-<p>
-  
-</p>
-
-
-```php
-```
-<p>
-  
-</p>
-
-
-```php
-```
-<p>
-  
-</p>
-
-
-```php
-```
-<p>
-  
-</p>
-
-
-
 
 
 
