@@ -945,9 +945,18 @@ elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 ```
 <p>
-  This will handle all other conditions,there is a variable called case.so THe case variable will tell the server about the information that is being sent  
+  This will handle all other conditions,there is a variable called case.so The case variable will tell the server about the information that is being sent  to the server
 </p>
 
+
+<!---UI--->
+<h2>
+  USER INTREFACE:
+</h2>
+
+<p>
+	You can control this project using a web dashboard and the files for the webdashboard has been are uploaded and you can use them ,just make sure to put the server adress propely in the javascript code.you can use the details givene below to understand how to use the dashbaord.
+</p>
 
 
 ***
