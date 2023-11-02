@@ -216,7 +216,7 @@ CREATE TABLE Wifi_data (
 INSERT INTO Wifi_data (wifi_id, label, ssid, password)
 VALUES
   (
-    1, 'College', 'SSN', 'Ssn1!Som2@Sase3#'
+    1, 'default', 'ssid', 'password'
   );
 CREATE TABLE Room_data (
   Room_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -500,38 +500,38 @@ void checkDeviceStatus() {
 
 // Function to check server status
 void checkServerStatus() {
-        checkDeviceStatus();
-        Serial.println("Checking server status...");
-        if (deviceOnline) {
-                sendMacHandshake();
-                if (http.begin(serverAddress)) {
-                        int httpCode = http.GET();
-                        if (httpCode == 200) {
-                                String serverResponse = http.getString();
-                                if (serverResponse.indexOf("Server alive!") != -1) {
-                                        serverOnline = true;
-                                }
-                        } else {
-                                serverOnline = false;
-                        }
-                        http.end();
+    checkDeviceStatus();
+    Serial.println("Checking server status...");
+    if (deviceOnline) {
+        if (http.begin(serverAddress)) {
+            int httpCode = http.GET();
+            if (httpCode == 200) {
+                String serverResponse = http.getString();
+                if (serverResponse.indexOf("Server alive!") != -1) {
+                    serverOnline = true;
+                    sendMacHandshake();
                 }
-        } else {
-                Serial.println("Failed to connect to the server");
+            } else {
                 serverOnline = false;
+            }
+            http.end();
         }
-        if (!serverOnline) {
-                serverWasOffline = true;
-        }
-        if (serverWasOffline && serverOnline) {
-                String postData = "{\"Case\": 1, \"Room\": \"" + Room_id + "\", \"States\": \"" + currentState + "\"}";
-                serverWasOffline = false;
-                http.begin(serverAddress);
-                http.addHeader("Content-Type", "application/json");
-                http.POST(postData);
-                http.end();
-                Serial.println("Server was offline, now it's back online");
-        }
+    } else {
+        Serial.println("Failed to connect to the server");
+        serverOnline = false;
+    }
+    if (!serverOnline) {
+        serverWasOffline = true;
+    }
+    if (serverWasOffline && serverOnline) {
+        String postData = "{\"Case\": 1, \"Room\": \"" + Room_id + "\", \"States\": \"" + currentState + "\"}";
+        serverWasOffline = false;
+        http.begin(serverAddress);
+        http.addHeader("Content-Type", "application/json");
+        http.POST(postData);
+        http.end();
+        Serial.println("Server was offline, now it's back online");
+    }
 }
 
 // Function to print device and server status
@@ -548,66 +548,67 @@ void printStatus() {
 </p>
 
 ```c++
-  // Function to handle Wi-Fi
+// Function to handle Wi-Fi
 void handleWiFi() {
-        // Extract Wi-Fi credentials from EEPROM
-        String savedJson = readStringFromEEPROM(eepromStartAddress);
-        int ssidStart = savedJson.indexOf("Ssid") + 7;
-        int ssidEnd = savedJson.indexOf("\",\"Password\"");
-        int passwordStart = savedJson.indexOf("Password") + 11;
-        int passwordEnd = savedJson.length() - 2;
-        savedSsid = savedJson.substring(ssidStart, ssidEnd);
-        savedPassword = savedJson.substring(passwordStart, passwordEnd);
-        Serial.println("WiFi details from EEPROM:");
-        Serial.println("SSID: " + savedSsid);
-        Serial.println("Password: " + savedPassword);
+    // Extract Wi-Fi credentials from EEPROM
+    String savedJson = readStringFromEEPROM(eepromStartAddress);
+    int ssidStart = savedJson.indexOf("Ssid") + 7;
+    int ssidEnd = savedJson.indexOf("\",\"Password\"");
+    int passwordStart = savedJson.indexOf("Password") + 11;
+    int passwordEnd = savedJson.length() - 2;
+    savedSsid = savedJson.substring(ssidStart, ssidEnd);
+    savedPassword = savedJson.substring(passwordStart, passwordEnd);
+    Serial.println("WiFi details from EEPROM:");
+    Serial.println("SSID: " + savedSsid);
+    Serial.println("Password: " + savedPassword);
 
-        // Try connecting with saved credentials
-        if (connectToWiFi(savedSsid.c_str(), savedPassword.c_str())) {
-                Serial.println("Saved credentials worked, attempting to proceed to server verification");
+    // Try connecting with saved credentials
+    if (connectToWiFi(savedSsid.c_str(), savedPassword.c_str())) {
+        Serial.println("Saved credentials worked, attempting to proceed to server verification");
 
-                http.begin(serverAddress);
-                http.addHeader("Content-Type", "application/json");
-                String jsonData = "{\"Case\": 6, \"Room\": \"" + Room_id + "\", \"Request\": \"5\"}";
-                String serverSsid = "";
-                String serverPassword = "";
-                String serverResponse = "";
+        http.begin(serverAddress);
+        http.addHeader("Content-Type", "application/json");
+        String jsonData = "{\"Case\": 6, \"Room\": \"" + Room_id + "\", \"Request\": \"5\"}";
+        String serverSsid = "";
+        String serverPassword = "";
+        String serverResponse = "";
 
-                int httpResponseCode = http.POST(jsonData);
+        int httpResponseCode = http.POST(jsonData);
 
-                if (httpResponseCode == HTTP_CODE_OK) {
-                        serverOnline = true;
-                        serverResponse = http.getString();
-                        int serverSsidStart = serverResponse.indexOf("ssid") + 8;
-                        int serverSsidEnd = serverResponse.indexOf("\",\"password\"");
-                        int serverPasswordStart = serverResponse.indexOf("password") + 12;
-                        int serverPasswordEnd = serverResponse.length() - 2;
+        if (httpResponseCode == HTTP_CODE_OK) {
+            serverOnline = true;
+            serverResponse = http.getString();
+            int serverSsidStart = serverResponse.indexOf("ssid") + 8;
+            int serverSsidEnd = serverResponse.indexOf("\",\"password\"");
+            int serverPasswordStart = serverResponse.indexOf("password") + 12;
+            int serverPasswordEnd = serverResponse.length() - 2;
 
-                        serverSsid = serverResponse.substring(serverSsidStart, serverSsidEnd);
-                        serverPassword = serverResponse.substring(serverPasswordStart, serverPasswordEnd);
+            serverSsid = serverResponse.substring(serverSsidStart, serverSsidEnd);
+            serverPassword = serverResponse.substring(serverPasswordStart, serverPasswordEnd);
 
-                        Serial.println("WiFi details from Server:");
-                        Serial.println("SSID: " + serverSsid);
-                        Serial.println("Password: " + serverPassword);
+            Serial.println("WiFi details from Server:");
+            Serial.println("SSID: " + serverSsid);
+            Serial.println("Password: " + serverPassword);
 
-                        if (serverSsid != savedSsid || serverPassword != savedPassword) {
-                                Serial.println("Trying server credentials");
-                                if (connectToWiFi(serverSsid.c_str(), serverPassword.c_str())) {
-                                        writeWiFiCredentialsToEEPROM(serverResponse);
-                                        ESP.restart();
-                                } else {
-                                        Serial.println("Server credentials are wrong, trying saved ones");
-                                        connectToWiFi(savedSsid.c_str(), savedPassword.c_str());
-                                }
-                        } else {
-                                Serial.println("Server and device credentials match");
-                        }
+            if (serverSsid != savedSsid || serverPassword != savedPassword) {
+                Serial.println("Trying server credentials");
+                if (connectToWiFi(serverSsid.c_str(), serverPassword.c_str())) {
+                    writeWiFiCredentialsToEEPROM(serverResponse);
+                    ESP.restart();
                 } else {
-                        Serial.println("Server was offline");
-                        serverOnline = false;
+                    Serial.println("Server credentials are wrong, trying saved ones");
+                    connectToWiFi(savedSsid.c_str(), savedPassword.c_str());
                 }
+            } else {
+                Serial.println("Server and device credentials match");
+            }
+        } else {
+            Serial.println("Server was offline");
+            serverOnline = false;
         }
+    }
 }
+
 
 ```
 
@@ -731,22 +732,21 @@ void sendSensorDataToServer() {
 </p>
 
 ```c++
-  //RTOS task handling local logic(switches)
+//RTOS task handling local logic(switches)
 void Manual(void * pvParameters) {
         while (1) {
-
                 String newState = "";
                 for (int i = 0; i < numPins; i++) {
                         newState += String(digitalRead(switchpins[i]));
                 }
                 if (newState != currentState) {
-                        currentState = newState;
-                        relayStates = currentState;
-                        Serial.println("local action handled!");
-                        controlRelays(relayStates);
-                }
+                          currentState = newState;
+                          relayStates = currentState;
+                          Serial.println("local action handled!");
+                          controlRelays(relayStates);
+                  }
 
-                vTaskDelay(500 / portTICK_PERIOD_MS);
+                vTaskDelay(1000 / portTICK_PERIOD_MS);
         }
 }
 
@@ -757,27 +757,27 @@ void Manual(void * pvParameters) {
 </p>
 
 ```c++
-  //RTOS task handling connection logic(wifi automation logic)
+//RTOS task handling connection logic(wifi automation logic)
 void Connected(void * pvParameters) {
         while (1) {
-                checkServerStatus();
+               checkServerStatus();
                 printStatus();
                 if (!deviceOnline) {
                         handleWiFi();
                 }
-                getSwitchStates();
+                getSwitchStates(); 
                 sendSensorDataToServer();
-                if (!deviceOnline || !serverOnline) {
-                        relayStates = currentState;
+                if (!serverOnline) {
+                        relayStates = currentState;         
                 } else {
                         askForRelayStates();
                         controlRelays(relayStates);
-
-                }
-
+                }                               
+                
                 vTaskDelay(1000 / portTICK_PERIOD_MS);
         }
 }
+
 ```
 
 <p>
@@ -785,39 +785,37 @@ void Connected(void * pvParameters) {
 </p>
 
 ```c++
+
 void setup() {
-        Serial.begin(115200); // Initialize serial communication with baud rate 115200
-        dht.begin();
-        for (int i = 0; i < numPins; i++) {
-                pinMode(switchpins[i], INPUT_PULLUP);
+    Serial.begin(115200); // Initialize serial communication with baud rate 115200
+    dht.begin();
+    for (int i = 0; i < numPins; i++) {
+        pinMode(switchpins[i], INPUT_PULLUP);
+    }
+    
+    String newState = "";
+    for (int i = 0; i < numPins; i++) {
+        newState += String(digitalRead(switchpins[i]));
+    }
+    currentState = newState;
+    for (int i = 0; i < numPins; i++) {
+        pinMode(relaypins[i], OUTPUT); // Set relay pins to OUTPUT
+    }
 
-        }
-        for (int i = 0; i < numPins; i++) {
-                newState += String(digitalRead(switchpins[i]));
-                currentState = newState;
-        }
+    EEPROM.begin(eepromSize);
+    handleWiFi();
+    checkServerStatus();
+    if(!serverOnline){
+      relayStates = currentState;
+      controlRelays(relayStates); 
+    }
 
-        for (int i = 0; i < numPins; i++) {
-                pinMode(relaypins[i], OUTPUT); // Set relay pins to OUTPUT
-        }
-
-        EEPROM.begin(eepromSize);
-        handleWiFi();
-        checkServerStatus();
-        if (!deviceOnline || !serverOnline) {
-                relayStates = currentState;
-
-         } else {
-                  askForRelayStates();
-                  controlRelays(relayStates);
-                  getSwitchStates();
-         }
-
-
-
-        xTaskCreatePinnedToCore(Manual, "Manual", 2048, NULL, 1, & task1Handle, 1);
-        xTaskCreatePinnedToCore(Connected, "Connected", 2048, NULL, 1, & task2Handle, 0);
+    
+    xTaskCreatePinnedToCore(Manual, "Manual", 2048, NULL, 1, & task1Handle, 1);
+    xTaskCreatePinnedToCore(Connected, "Connected", 4096, NULL, 1, & task2Handle, 0);
+    
 }
+
 
 void loop() {
         //Nothing runs in loop,two independent tasks in two diffrent cores run the show
