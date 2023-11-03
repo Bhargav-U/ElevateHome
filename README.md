@@ -125,7 +125,7 @@ php -S 0.0.0.0:8000
 ```
 
 <P>
-  Now after you setup you server and it is running properly,open the test_code file and run the main.py to test and understand the format in which data is being sent processes,how server is responding etc.Doing this will help you understand the esp code easily.Note that the code dosent include error handling so if you try to connect to server when it is offline you will face errors.
+  Now after you setup you server and it is running properly,<a href='https://github.com/Bhargav-U/ElevateHome/blob/main/test_code.zip' target="_blank"><img alt='python' src='https://img.shields.io/badge/use_test code-100000?style=plastic&logo=python&logoColor=white&labelColor=black&color=black'/></a>  file and run the main.py to test and understand the format in which data is being sent processes,how server is responding etc.Doing this will help you understand the esp code easily.Note that the code dosent include error handling so if you try to connect to server when it is offline you will face errors.
 </P>
 
 
