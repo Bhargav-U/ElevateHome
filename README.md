@@ -951,12 +951,79 @@ elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <!---UI--->
 <h2>
-  USER INTREFACE:
+  USER INTERACE:
 </h2>
 
 <p>
-	You can control this project using a web dashboard and the files for the webdashboard has been are uploaded and you can use them ,just make sure to put the server adress propely in the javascript code.you can use the details givene below to understand how to use the dashbaord.
+	You can control this project using a web dashboard.The files for the webdashboard has been are uploaded and you can use them ,just make sure to put the server address properly in the javascript code(changes to be made are marked out for you)<br>
 </p>
+<h3>
+	USING THE WEBDASHBOARD:
+</h3>
+<h5>
+	HOME PAGE:
+</h5>
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="Page 1">
+<h5>
+	ROOMS PAGE:
+</h5>
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="Page 2">
+<h5>
+	ROOM PAGE:
+</h5>
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="Page 3">
+<h5>
+	 SETTINGS PAGE:
+</h5>
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="Page 4">
+<h5>
+	WIFI SETTINGS PAGE:
+</h5>
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="Page 5">
+<h5>
+	ROOM SETTINGS PAGE:
+</h5>
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="Page 6">
+<h5>
+	APPLIANCE SETTINGS PAGE:
+</h5>
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="Page 7">
+
+<!---Prototype--->
+<h2>
+  PROTOTYPE:
+</h2>
+<h5>
+	PROGRAMMING THE PCB:
+</h5>
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="In and outs">
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="programming">
+
+<h5>
+	THE CASE:
+</h5>
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="3D design">
+<h5>
+	LINKING THE PROJECT TO  DASHBOARD:
+</h5>
+<h3>
+	TWEEEKING THE CODE:
+</h3>
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="code url change">
+<h3>
+	CONFIGURING THE NEW DEVICE:
+</h3>
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="Renamming new room1">
+<h3>
+	INITIAL SETUP:
+</h3>
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="Renamming new room1">
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="Renamming new room2">
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="Renamming new room3">
+<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="Renamming new room4">
+
+
+
 
 
 ***
