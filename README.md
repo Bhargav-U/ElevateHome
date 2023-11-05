@@ -951,7 +951,7 @@ elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <!---UI--->
 <h2>
-  USER INTERACE:
+  USER INTERFACE:
 </h2>
 
 <p>
