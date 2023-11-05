@@ -1003,9 +1003,9 @@ elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
 	THE CASE:
 </h5>
 <img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="3D design">
-<h5>
+<h2>
 	LINKING THE PROJECT TO  DASHBOARD:
-</h5>
+</h2>
 <h3>
 	TWEEEKING THE CODE:
 </h3>
