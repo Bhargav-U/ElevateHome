@@ -1,11 +1,12 @@
 /* 
  *  ELEVATE HOMES
  *  Author: "Bhargav-U"
- *  Code Name: Home Automation System
+ *  Code Name: ESP32 Based Home Automation System 
  *  Baud Rate: 115200 
  *  Board Name: Espressif ESP32-WROOM-32 16M 128Mbit Flash WiFi Bluetooth Module(use it as DOIT ESP32 DEVKIT V1)
  */
 
+//Include the required libraries
 #include <WiFi.h>
 
 #include <HTTPClient.h>
