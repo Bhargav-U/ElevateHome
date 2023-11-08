@@ -270,7 +270,8 @@ VALUES
 -You can use a esp32 devlopment board,jumper wires,relay module(4 relays),switches,wires to handle ac current to make youself a circuit based on the generic circuit i have attached below<br>
 -You can use my gerber file named "Elevatehomegerber" to order your own pcb and make a custom designed project which doesnt have the tiring work of wiring etc,simply get the pcb,buy the components,solder them onto teh pcb and you are reday to go.<br>
 -You can also use the stl file to print a simple enclosure for the project by using the stl file named "Case".<br>
--After you are done making your hardware setup follow the instructions below to program your esp.
+-After you are done making your hardware setup follow the instructions below to program your esp.<br>
+-Refer to the "WiringSetupManual" for more instructions on genral setup and wiring.
 </p>
 
 
