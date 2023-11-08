@@ -271,7 +271,7 @@ VALUES
 -You can use my gerber file named "Elevatehomegerber" to order your own pcb and make a custom designed project which doesnt have the tiring work of wiring etc,simply get the pcb,buy the components,solder them onto teh pcb and you are reday to go.<br>
 -You can also use the stl file to print a simple enclosure for the project by using the stl file named "Case".<br>
 -After you are done making your hardware setup follow the instructions below to program your esp.<br>
--Refer to the "WiringSetupManual" for more instructions on genral setup and wiring.
+-Refer to the <a href='https://github.com/Bhargav-U/ElevateHome/blob/main/WiringSetupManual.pdf' target="_blank"><img alt='linux' src='https://img.shields.io/badge/SETUP_MANUAL-100000?style=for-the-badge&logo=linux&logoColor=00E2FF&labelColor=black&color=black'/></a> for more instructions on genral setup and wiring.
 </p>
 
 
