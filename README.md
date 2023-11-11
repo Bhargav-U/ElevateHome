@@ -988,7 +988,9 @@ Now after you configure your room,you can head back to the rooms section and sel
 
 ***
 
-<a href='unnambhargav@gmail.com' target="_blank"><img alt='gmail' src='https://img.shields.io/badge/Feel_free to ask me your questions and suggest improvemts-100000?style=for-the-badge&logo=gmail&logoColor=FF0000&labelColor=black&color=000000'/></a>
+Feel free ask me your questions regarding this project and help me improve my project by providing your valuble suggestions<br>
+[![Email](https://img.shields.io/badge/Email-unnambhargav%40gmail.com-black?style=flat-square&logo=gmail)](mailto:unnambhargav@gmail.com)
+
 
 <p align = "center">
 	Made with help from:<br>
