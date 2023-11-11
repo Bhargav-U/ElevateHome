@@ -289,7 +289,7 @@ Note:Mkae sure that esp32 boards is insatlled on your ide<br>
 -Power on your esp and connect it to your laptop either using a ftdi or a usb cable<br>
 -Go to the boards section and select esp32doitdevkit(depends on what you are using but in my case i used this)<br>
 -Select the port to which the esp is connected and on serial monitor set teh baud rate to 115200<br>
--No look at the serial monitor,press and hold the boot button,now keep holding teh boot button and press the reset button you will see a messge saying "waiting for download",now relase the boot button and click on the uplaod button on the ide<br>
+-No look at the serial monitor,press and hold the boot button,now keep holding teh boot button and press and release the reset button you will see a messge saying "waiting for download",now relase the boot button and click on the uplaod button on the ide<br>
 -Once code is uploaded click the reset button<br>
 -In the below explanation section i have explained which code to upload and chanegs you need to do<br>
 </p>
@@ -956,7 +956,7 @@ elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
 </h2>
 
 <p>
-	You can control this project using a web dashboard.The files for the webdashboard has been are uploaded and you can use them ,just make sure to put the server address properly in the javascript code(You just need to change the server address based on your server address)<br>
+	You can control this project using a web dashboard.The files for the webdashboard has been are uploaded and you can use them ,just make sure to put the server address properly in the javascript code(You just need to change the server address based on your server address).When teh project is connected to wifi ,it iwll automatically show up in your dashboard considering that the server address is correct.Now you simply need to go to the rooms page where you will see a new room pop up.no you can configure the new room,appliance names through the room settings in the settings page.So it's just plug and play.everytime a new device tries to connect to the server it is identified through its mac address and given a room id ,so scaling up multiple nodes is easy and quick as each room has its unique adressing.<br>
 </p>
 
 ***
