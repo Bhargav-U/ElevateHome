@@ -997,7 +997,7 @@ elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
 <h5>
 	PROGRAMMING THE PCB:
 </h5>
-<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="In and outs">
+<img src="https://drive.google.com/file/d/1_z_aUOSa2XF0sYdaYQT9hVUx2eAMIhyW/view?usp=sharing" alt="programming">
 <img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="programming">
 
 <h5>
