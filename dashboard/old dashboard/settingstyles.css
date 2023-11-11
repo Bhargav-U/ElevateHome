@@ -1,0 +1,191 @@
+body, html {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+body {
+	background-color: #000000;
+	color: #FFFFFF;
+}
+.top-bar {
+	background-color: #222;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 20px;
+	padding: 10px 0;
+	border-radius: 50px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	border: 2px solid #33d9f7;
+}
+.top-bar a {
+	color: #FFFFFF;
+	text-decoration: none;
+	padding: 10px 20px;
+	border-radius: 50px;
+	transition: background-color 0.3s, color 0.3s;
+}
+.top-bar a:hover {
+	background-color: #33d9f7;
+	color: #000000;
+}
+.body-header {
+	margin-top: 100px;
+	background-color: rgb(27, 27, 27);
+	color: #33d9f7;
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 50px;
+}
+.settings-section {
+	background-color: #222;
+	color: #FFFFFF;
+	padding: 30px;
+	margin: 20px auto;
+	max-width: 400px;
+	border-radius: 25px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	text-align: center;
+}
+.settings-section h2 {
+	font-size: 24px;
+	margin-bottom: 15px;
+	color: #33d9f7;
+}
+#wifi-settings-form {
+	text-align:left;
+}
+#wifi-label,#wifi-ssid,#wifi-password {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: none;
+	border-radius: 50px;
+	background-color: #333;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+#wifi-label::placeholder,#wifi-ssid::placeholder,#wifi-password::placeholder {
+	color: #757474;
+}
+.password-container {
+	position: relative;
+}
+#password-toggle {
+	position: absolute;
+	right: 2px;
+	top: 35%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	color: #33d9f7;
+}
+#save-wifi-settings {
+	background-color: #7c7c7c;
+	color: rgb(0, 0, 0);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 50px;
+	font-size: 18px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	display: block;
+	margin: 0 auto;
+}
+#save-wifi-settings:hover {
+	background-color: #33d9f7;
+}
+#room-settings-form {
+	text-align:left;
+}
+#room-id,#room-name,#appliance1,#appliance2,#appliance3,#appliance4 {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: none;
+	border-radius: 50px;
+	background-color: #333;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+#room-id::placeholder,#room-name::placeholder,#appliance1::placeholder,#appliance2::placeholder,#appliance3::placeholder,#appliance4::placeholder {
+	color: #757474;
+}
+#save-room-settings {
+	background-color: #7c7c7c;
+	color: rgb(0, 0, 0);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 50px;
+	font-size: 18px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	display: block;
+	margin: 0 auto;
+}
+#save-room-settings:hover {
+	background-color: #33d9f7;
+}
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: #33d9f7;
+	border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #2692c4;
+}
+.feedback-popup {
+	position: fixed;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #333;
+	color: #FFFFFF;
+	padding: 10px 20px;
+	border-radius: 10px;
+	opacity: 0;
+	transition: opacity 0.5s;
+	z-index: 999;
+}
+.feedback-popup.success {
+	background-color: #4caf50;
+}
+.feedback-popup.error {
+	background-color: #f44336;
+}
+Add Device section styles#add-device-form {
+	text-align:left;
+}
+#device-number {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: none;
+	border-radius: 50px;
+	background-color: #333;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+#device-number::placeholder {
+	color: #757474;
+}
+#add-device-button {
+	background-color: #7c7c7c;
+	color: rgb(0, 0, 0);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 50px;
+	font-size: 18px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	display: block;
+	margin: 0 auto;
+}
+#add-device-button:hover {
+	background-color: #33d9f7;
+}

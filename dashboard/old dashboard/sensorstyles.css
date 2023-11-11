@@ -1,0 +1,81 @@
+body, html {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+body {
+	background-color: #000000;
+	color: #FFFFFF;
+}
+.top-bar {
+	background-color: #222;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 20px;
+	padding: 10px 0;
+	border-radius: 50px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	border: 2px solid #33d9f7;
+}
+.top-bar a {
+	color: #FFFFFF;
+	text-decoration: none;
+	padding: 10px 20px;
+	border-radius: 50px;
+	transition: background-color 0.3s, color 0.3s;
+}
+.top-bar a:hover {
+	background-color: #33d9f7;
+	color: #000000;
+}
+.sensor-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.humidity-box,.temperature-box {
+	background-color: #222;
+	border-radius: 10px;
+	padding: 30px;
+	margin: 20px;
+	text-align: center;
+	width: 400px;
+}
+.humidity i,.temperature i {
+	font-size: 96px;
+	margin-bottom: 20px;
+}
+.humidity i {
+	color: #33d9f7;
+}
+.temperature i {
+	color: #33d9f7;
+}
+.sensor-value {
+	font-size: 48px;
+	font-weight: bold;
+}
+.humidity i,.temperature i {
+	font-size: 96px;
+	margin-bottom: 20px;
+}
+.humidity i {
+	color: #ffffff;
+}
+.temperature i {
+	color: #ffffff;
+}
+.humidity i:hover {
+	font-size: 120px;
+	color: #33d9f7;
+}
+.temperature i:hover {
+	font-size: 120px;
+	color: #33d9f7;
+}

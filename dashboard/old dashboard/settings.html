@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="settingstyles.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+            <title>Settings</title>
+      </head>
+      <body>
+            <div class="top-bar">
+                  <a href="Home.html">Home</a>
+                  <a href="Rooms.html">Rooms</a>
+                  <a href="sensors.html">Sensors</a>
+                  <a href="settings.html">Settings</a>
+            </div>
+            <div class="body-header">
+                  <h1>Settings</h1>
+            </div>
+            <div class="settings-section">
+                  <h2>Wi-Fi Settings</h2>
+                  <form id="wifi-settings-form">
+                        <label for="wifi-label">Label:</label>
+                        <input type="text" id="wifi-label" name="wifi-label" placeholder="Enter a label">
+                        <br>
+                        <br>
+                        <label for="wifi-ssid">SSID:</label>
+                        <input type="text" id="wifi-ssid" name="wifi-ssid" placeholder="Enter the SSID">
+                        <br>
+                        <br>
+                        <label for="wifi-password">Password:</label>
+                        <div class="password-container">
+                              <input type="password" id="wifi-password" name="wifi-password" placeholder="Enter the Wi-Fi password">
+                              <i class="fas fa-eye" id="password-toggle"></i>
+                        </div>
+                        <br>
+                        <br>
+                        <button type="button" id="save-wifi-settings">Save</button>
+                  </form>
+            </div>
+            <div class="settings-section">
+                  <h2>Room Settings</h2>
+                  <form id="room-settings-form">
+                        <label for="room-id">Room ID:</label>
+                        <input type="text" id="room-id" name="room-id" placeholder="Enter room ID">
+                        <br>
+                        <br>
+                        <label for="room-name">Room Name:</label>
+                        <input type="text" id="room-name" name="room-name" placeholder="Enter room name">
+                        <br>
+                        <br>
+                        <label for="appliance1">Appliance 1:</label>
+                        <input type="text" id="appliance1" name="appliance1" placeholder="Enter appliance 1 name">
+                        <br>
+                        <br>
+                        <label for="appliance2">Appliance 2:</label>
+                        <input type="text" id="appliance2" name "appliance2" placeholder="Enter appliance 2 name">
+                        <br>
+                        <br>
+                        <label for="appliance3">Appliance 3:</label>
+                        <input type="text" id="appliance3" name="appliance3" placeholder="Enter appliance 3 name">
+                        <br>
+                        <br>
+                        <label for="appliance4">Appliance 4:</label>
+                        <input type="text" id="appliance4" name="appliance4" placeholder="Enter appliance 4 name">
+                        <br>
+                        <br>
+                        <button type="button" id="save-room-settings">Save</button>
+                  </form>
+            </div>
+            </div>
+            <script src="settingscript.js"></script>
+      </body>
+</html>

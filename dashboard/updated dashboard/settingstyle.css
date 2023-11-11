@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #DBE2EF;
+    overflow:auto;
+}
+
+header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding: 20px 100px;
+    background: #162938; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:99;
+}
+
+.logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation a {
+    position: relative;
+    font-size:1.1em;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content:'';
+    position: absolute;
+    left:0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+
+}
+
+.navigation .btnLogin-popup:hover {
+    background:#fff;
+    color: #162938;
+
+}
+
+.body-header {
+    margin-top: 0;
+    background-color: #162938;
+    color: #9BBEC8;
+    text-align: center;
+    padding: 30px; /* Increase padding to make the box bigger */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.body-header h1 {
+    font-size: 2em; /* Increase the font size */
+}
+
+.body-header a {
+    font-size: 1.2em; /* Increase the font size for links */
+}
+
+.body-header a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #162938;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.body-header a:hover {
+    background-color: #fff;
+    color: #162938;
+    transform: scale(1.05);
+}
+
+.body-header h1 {
+    margin-bottom: 20px; /* Adjust this value to control the spacing */
+}
+
+
+
+
+

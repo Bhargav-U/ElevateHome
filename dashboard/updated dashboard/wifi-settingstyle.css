@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #DBE2EF;
+    overflow:auto;
+}
+
+header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding: 20px 100px;
+    background: #162938; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:99;
+}
+
+.logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation a {
+    position: relative;
+    font-size:1.1em;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content:'';
+    position: absolute;
+    left:0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+
+}
+
+.navigation .btnLogin-popup:hover {
+    background:#fff;
+    color: #162938;
+
+}
+
+.settings-section {
+	background-color: #222;
+	color: #FFFFFF;
+	padding: 30px;
+	margin: 20px auto;
+	max-width: 400px;
+	border-radius: 25px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	text-align: center;
+}
+
+.settings-section h2 {
+	font-size: 24px;
+	margin-bottom: 15px;
+	color: #9BBEC8;
+}
+
+#wifi-settings-form {
+	text-align:left;
+}
+
+#wifi-label,#wifi-ssid,#wifi-password {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: none;
+	border-radius: 50px;
+	background-color: #333;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+
+#wifi-label::placeholder,#wifi-ssid::placeholder,#wifi-password::placeholder {
+	color: #757474;
+}
+
+.password-container {
+	position: relative;
+}
+
+#password-toggle {
+	position: absolute;
+	right: 2px;
+	top: 35%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	color: #9BBEC8;
+}
+
+#save-wifi-settings {
+	background-color: #7c7c7c;
+	color: rgb(0, 0, 0);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 50px;
+	font-size: 18px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	display: block;
+	margin: 0 auto;
+}
+
+#save-wifi-settings:hover {
+	background-color: #9BBEC8;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: #33d9f7;
+	border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #2692c4;
+}
+.feedback-popup {
+	position: fixed;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #333;
+	color: #FFFFFF;
+	padding: 10px 20px;
+	border-radius: 10px;
+	opacity: 0;
+	transition: opacity 0.5s;
+	z-index: 999;
+}
+.feedback-popup.success {
+	background-color: #4caf50;
+}
+.feedback-popup.error {
+	background-color: #f44336;
+}
+Add Device section styles#add-device-form {
+	text-align:left;
+}
+#device-number {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: none;
+	border-radius: 50px;
+	background-color: #333;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+#device-number::placeholder {
+	color: #757474;
+}
+#add-device-button {
+	background-color: #7c7c7c;
+	color: rgb(0, 0, 0);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 50px;
+	font-size: 18px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	display: block;
+	margin: 0 auto;
+}
+#add-device-button:hover {
+	background-color: #33d9f7;
+}

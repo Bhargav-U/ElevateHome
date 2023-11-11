@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> ElevateHomes </title>
+        <meta name="viewport" content="width=device-width, 
+        initial-scale=1">
+        <link rel="stylesheet" href="wifi-settingstyle.css">
+    </head>
+
+    <body>
+        <header>
+            <h2 class="logo"> ElevateHomes </h2>
+            <nav class="navigation">
+                <a href="index.html"> Home </a>
+                <a href="sensors.html"> Sensors </a>
+                <a href="rooms.html"> Rooms </a>
+                <a href="settings.html"> Settings </a>
+                <button class="btnLogin-popup"> Login</button>
+            </nav>
+        </header>
+
+        <div class="settings-section">
+            <h2>Wi-Fi Settings</h2>
+            <form id="wifi-settings-form">
+                  <label for="wifi-label">Label:</label>
+                  <input type="text" id="wifi-label" name="wifi-label" placeholder="Enter a label">
+                  <br>
+                  <br>
+                  <label for="wifi-ssid">SSID:</label>
+                  <input type="text" id="wifi-ssid" name="wifi-ssid" placeholder="Enter the SSID">
+                  <br>
+                  <br>
+                  <label for="wifi-password">Password:</label>
+                  <div class="password-container">
+                        <input type="password" id="wifi-password" name="wifi-password" placeholder="Enter the Wi-Fi password">
+                        <i class="fas fa-eye" id="password-toggle"></i>
+                  </div>
+                  <br>
+                  <br>
+                  <button type="button" id="save-wifi-settings">Save</button>
+            </form>
+      </div>
+      <script src="settingscript.js"></script>
+    </body>
+</html>
