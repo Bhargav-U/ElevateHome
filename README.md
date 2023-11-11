@@ -1,7 +1,8 @@
 <!---Heading--->
-<h1 align="center">ElevateHome</h1>
+![Image 6](https://drive.google.com/uc?id=16cjoj2_qw8i7_SMm-ISf5IxbGw2Aqjxj)
 <p align="center">
-  A simple home automation project using esp32
+  A simple home automation project using esp32<br>
+  <a href='https://www.canva.com/design/DAFzlFBbA8w/Mm4hW3mSl3njbyM1p4ljBw/edit?utm_content=DAFzlFBbA8w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton' target="_blank"><img alt='canva' src='https://img.shields.io/badge/Check_this out!-100000?style=for-the-badge&logo=canva&logoColor=46E5FA&labelColor=050505&color=000000'/></a>
 </p>
 
 ***
@@ -287,11 +288,14 @@ Note:Mkae sure that esp32 boards is insatlled on your ide<br>
 -It dosent matter if you made your own circuit or used the custom pcb your project will have a boot and a reset pin<br>
 -To upload the code you need to make sure that you esp is in boot mode<br>
 -Power on your esp and connect it to your laptop either using a ftdi or a usb cable<br>
+	
+![ftdi connection](https://drive.google.com/uc?id=1_z_aUOSa2XF0sYdaYQT9hVUx2eAMIhyW)
+
 -Go to the boards section and select esp32doitdevkit(depends on what you are using but in my case i used this)<br>
 -Select the port to which the esp is connected and on serial monitor set teh baud rate to 115200<br>
 -No look at the serial monitor,press and hold the boot button,now keep holding teh boot button and press and release the reset button you will see a messge saying "waiting for download",now relase the boot button and click on the uplaod button on the ide<br>
 -Once code is uploaded click the reset button<br>
--In the below explanation section i have explained which code to upload and chanegs you need to do<br>
+-In the below explanation section i have explained which code to upload and changes you need to do<br>
 </p>
 
 
@@ -959,8 +963,32 @@ elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
 	You can control this project using a web dashboard.The files for the webdashboard has been are uploaded and you can use them ,just make sure to put the server address properly in the javascript code(You just need to change the server address based on your server address).When teh project is connected to wifi ,it iwll automatically show up in your dashboard considering that the server address is correct.Now you simply need to go to the rooms page where you will see a new room pop up.no you can configure the new room,appliance names through the room settings in the settings page.So it's just plug and play.everytime a new device tries to connect to the server it is identified through its mac address and given a room id ,so scaling up multiple nodes is easy and quick as each room has its unique adressing.<br>
 </p>
 
+<h3>
+	Configuring the project at first connection to the server:
+</h3>
+once the project is powered on it iwll automatically connect to the server and  in the rooms section of the dashbord,you will see a new room popup like the one in the image below,
+
+![ROOMS](https://drive.google.com/uc?id=1X1JxEKE80KOUFEJobqhScXs0WSc_upsN)
+
+you can chnage the names of the appliance and room,by simply going into the room settings in the settings section of the dashboard,here you simply need to enter the room id od the room you want to configure.The room id is the same teh position of that room in the rooms section.once you set the names ,click on save to make the changes.
+
+![SETTINGS PAGE](https://drive.google.com/uc?id=16Eivd69Q9szRMPJQMQuR2iUJ8mO45xpF)
+
+
+![ROOM SETTINGS](https://drive.google.com/uc?id=1MIZUK0lfzrg9KcmPFedoKyWSjtVnUuOm)
+
+Now after you configure your room,you can head back to the rooms section and select your room,control teh appliance using the toggle switches
+
+![ROOM](https://drive.google.com/uc?id=18E0XaiUxrRXX1GMdDor9e1qpyGRVMJoC)
+
+
+
 ***
-<a href='unnambhargav@gmail.com' target="_blank"><img alt='gmail' src='https://img.shields.io/badge/Feel_free to ask me your question and suggest improvemts-100000?style=for-the-badge&logo=gmail&logoColor=FF0000&labelColor=black&color=000000'/></a>
+
+
+***
+
+<a href='unnambhargav@gmail.com' target="_blank"><img alt='gmail' src='https://img.shields.io/badge/Feel_free to ask me your questions and suggest improvemts-100000?style=for-the-badge&logo=gmail&logoColor=FF0000&labelColor=black&color=000000'/></a>
 
 <p align = "center">
 	Made with help from:<br>
