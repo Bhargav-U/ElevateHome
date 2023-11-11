@@ -32,7 +32,7 @@
 <a href='https://www.python.org/' target="_blank"><img alt='python' src='https://img.shields.io/badge/Python-100000?style=for-the-badge&logo=python&logoColor=FDED06&labelColor=FFFFFF&color=000000'/></a>
 <a href='https://httpd.apache.org/' target="_blank"><img alt='apache' src='https://img.shields.io/badge/Apache-100000?style=for-the-badge&logo=apache&logoColor=FF0000&labelColor=FFFFFF&color=000000'/></a>
 
----
+***
 
 <!---server setup section--->
 <h2>SETTING UP YOUR SERVER:</h3>
@@ -275,6 +275,18 @@ VALUES
 -Refer to the <a href='https://github.com/Bhargav-U/ElevateHome/blob/main/WiringSetupManual.pdf' target="_blank"><img alt='linux' src='https://img.shields.io/badge/SETUP_MANUAL-100000?style=for-the-badge&logo=linux&logoColor=00E2FF&labelColor=black&color=black'/></a> for more instructions on genral setup and wiring.
 </p>
 
+<!----images for fun--->
+<h3>PCB PROTOTYPE:</h3>
+
+![raw](https://drive.google.com/uc?id=1RBd2ZmTgvuzbGFZQTlqQlUxnjKq3edtd)
+
+![Image 1](https://drive.google.com/uc?id=1Gu9-k0qEiEavpGbncVH5dmDsF5wCb9Fu)
+
+
+![Image 2](https://drive.google.com/uc?id=1I7FXmiWv21L09XKe7GRvesDb1F20xc1e)
+
+
+***
 
 
 ***
@@ -289,7 +301,6 @@ Note:Mkae sure that esp32 boards is insatlled on your ide<br>
 -To upload the code you need to make sure that you esp is in boot mode<br>
 -Power on your esp and connect it to your laptop either using a ftdi or a usb cable<br>
 	
-![ftdi connection](https://drive.google.com/uc?id=1_z_aUOSa2XF0sYdaYQT9hVUx2eAMIhyW)
 
 -Go to the boards section and select esp32doitdevkit(depends on what you are using but in my case i used this)<br>
 -Select the port to which the esp is connected and on serial monitor set teh baud rate to 115200<br>
@@ -985,6 +996,12 @@ Now after you configure your room,you can head back to the rooms section and sel
 
 ***
 
+<p>
+	If you are planning to make your self a pcb prototype you can refer to the componets list below,you will find the same components i used for this project,unaffliated links.These worked best for me<br>
+<p align = "center">
+	<a href='https://drive.google.com/file/d/1veKbc5ochvP25u9h9z88X4OARTv1YUqS/view?usp=sharing' target="_blank"><img alt='' src='https://img.shields.io/badge/Products-100000?style=for-the-badge&logo=&logoColor=white&labelColor=black&color=FF0000'/></a>
+</p>
+</p>
 
 ***
 
@@ -998,5 +1015,8 @@ Feel free ask me your questions regarding this project and help me improve my pr
  	<a href='https://github.com/nithyapandurangan' target="_blank"><img alt='GITHUB' src='https://img.shields.io/badge/NITHYA-100000?style=for-the-badge&logo=GITHUB&logoColor=white&labelColor=A900FD&color=FFFFFF'/></a><br>
 	
 </p>
+
+
+
 
 ***
