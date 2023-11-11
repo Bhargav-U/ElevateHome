@@ -1005,7 +1005,7 @@ Now after you configure your room,you can head back to the rooms section and sel
 
 ***
 
-Feel free ask me your questions regarding this project and help me improve my project by providing your valuble suggestions<br>
+Feel free ask me your questions regarding this project and help me improve my project by providing your valuble suggestions
 [![Email](https://img.shields.io/badge/Email-unnambhargav%40gmail.com-black?style=flat-square&logo=gmail)](mailto:unnambhargav@gmail.com)
 
 
