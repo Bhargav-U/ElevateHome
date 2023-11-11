@@ -961,4 +961,12 @@ elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 ***
 <a href='unnambhargav@gmail.com' target="_blank"><img alt='gmail' src='https://img.shields.io/badge/Feel_free to ask me your question and suggest improvemts-100000?style=for-the-badge&logo=gmail&logoColor=FF0000&labelColor=black&color=000000'/></a>
+
+<p align = "center">
+	Made with help from:<br>
+	<a href='https://github.com/vatsav123' target="_blank"><img alt='GITHUB' src='https://img.shields.io/badge/VATSAV-100000?style=for-the-badge&logo=GITHUB&logoColor=white&labelColor=FF0000&color=FFFFFF'/></a><br>
+ 	<a href='https://github.com/nithyapandurangan' target="_blank"><img alt='GITHUB' src='https://img.shields.io/badge/NITHYA-100000?style=for-the-badge&logo=GITHUB&logoColor=white&labelColor=A900FD&color=FFFFFF'/></a><br>
+	
+</p>
+
 ***
