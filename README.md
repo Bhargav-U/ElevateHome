@@ -956,59 +956,8 @@ elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
 </h2>
 
 <p>
-	You can control this project using a web dashboard.The files for the webdashboard has been are uploaded and you can use them ,just make sure to put the server address properly in the javascript code(changes to be made are marked out for you)<br>
+	You can control this project using a web dashboard.The files for the webdashboard has been are uploaded and you can use them ,just make sure to put the server address properly in the javascript code(You just need to change the server address based on your server address)<br>
 </p>
-<h3>
-	USING THE WEBDASHBOARD:
-</h3>
-<h5>
-	ROOMS PAGE:
-</h5>
-<p>As soon as you upload the code and power the project,you will see a new room in this page.you will simply need to configure your page.To configure your page you can use the wiringsetupmanual pdf. </p><br>
-
-![avilable rooms](https://drive.google.com/file/d/1X1JxEKE80KOUFEJobqhScXs0WSc_upsN/view?usp=drive_link)
-
-<h5>
-	ROOM PAGE:
-</h5>
-
-![Room control](https://drive.google.com/file/d/18E0XaiUxrRXX1GMdDor9e1qpyGRVMJoC/view?usp=sharing)
-
-<h5>
-	 SETTINGS PAGE:
-</h5>
-
-![Settings](https://drive.google.com/file/d/16Eivd69Q9szRMPJQMQuR2iUJ8mO45xpF/view?usp=sharing)
-
-<h5>
-	WIFI SETTINGS PAGE:
-</h5>
-
-![Wifi settings](https://drive.google.com/file/d/1LkZnVZpptY_V4NcXaetE_kfqtmjnE0kw/view?usp=drive_link)
-
-<h5>
-	ROOM SETTINGS PAGE:
-</h5>
-
-![Room settings](https://drive.google.com/file/d/1MIZUK0lfzrg9KcmPFedoKyWSjtVnUuOm/view?usp=drive_link)
-
-
-<!---Prototype--->
-<h2>
-  PROTOTYPE:
-</h2>
-<h5>
-	PROGRAMMING THE PCB:
-</h5>
-
-![Programming1](https://drive.google.com/file/d/1_z_aUOSa2XF0sYdaYQT9hVUx2eAMIhyW/view?usp=sharing)
-
-<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="step2 programming">
-
-<h5>
-	THE CASE:
-</h5>
-<img src="https://static.vecteezy.com/system/resources/previews/013/149/674/original/unavailable-image-icon-in-trendy-flat-style-isolated-on-white-background-photo-gallery-symbol-for-web-and-mobile-apps-free-vector.jpg" alt="cse">
 
 ***
 <a href='unnambhargav@gmail.com' target="_blank"><img alt='gmail' src='https://img.shields.io/badge/Feel_free to ask me your question and suggest improvemts-100000?style=for-the-badge&logo=gmail&logoColor=FF0000&labelColor=black&color=000000'/></a>
