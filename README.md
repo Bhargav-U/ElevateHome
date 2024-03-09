@@ -1007,7 +1007,9 @@ Now after you configure your room,you can head back to the rooms section and sel
 
 ***
 
-Feel free ask me your questions regarding this project and help me improve my project by providing your valuble suggestions
+Feel free ask me your questions regarding this project and help me improve my project by providing your valuble suggestions.i know there is a lot of scope for me to improve this project,i am very satisfied that i was able to make a idea of mine a reality.working on the hardware and software i gained a lot of experince regarding iot,microcontrllers,coding,web dev,bits and pieces of ubuntu,hosting webservers,http protocol.i was also able to brush my skills in sql,webdev,php,c.It was a great experience learning pcb designing and cad.but,to make it clear ,there is a lot of scope for improvment and that is where i need people to help me learn.
+
+I appreciate your intrest in my project,please checkout the discussions and also feel free to connect to me.
 [![Email](https://img.shields.io/badge/Email-unnambhargav%40gmail.com-black?style=flat-square&logo=gmail)](mailto:unnambhargav@gmail.com)
 
 
